@@ -10,7 +10,8 @@ class Measurement(models.Model):
     '''
     id = models.BigAutoField(db_column='ID', primary_key=True)
     value = models.FloatField(verbose_name='value', default=0.0000)
-    date = models.CharField(verbose_name='date', max_length=40, default='dd-mm-yyyy hh:mm:ss')
+    date = models.CharField(verbose_name='date', max_length=40, default='dd-mm-yyyy')
+    time = models.CharField(verbose_name='time', max_length=40, default='hh:mm:ss')
 
     class Meta:
         db_table = 'sensor_data_measurements'
