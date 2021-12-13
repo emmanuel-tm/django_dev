@@ -14,10 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path
-
 # NOTE: Import my views:
 from applications.sensor_data.api.api_views import *
 
+
+# API Views asociadas a la aplicación "sensor_data":
 urlpatterns = [
-    path('save', SaveAPIView.as_view())
+    path('save', SaveAPIView.as_view()),
+    path('get/max', GetMaxAPIView.as_view()),
+    path('get/min', GetMinAPIView.as_view()),
+    path('get/avg', GetAvgAPIView.as_view())
 ]
