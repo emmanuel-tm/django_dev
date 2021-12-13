@@ -45,7 +45,7 @@ class SaveAPIView(APIView):
         \nque reciba mediante el "request" los datos enviados, 
         \nen este caso por un sensor.
         \n`Content-Type: 'application/json`.
-        \n`Schema:`
+        \n`Ejemplo de Schema de Entrada:`
         \n`{`
         \n` "sensor_data": [1, -2, 3.2, 7]`
         \n`}`
@@ -58,7 +58,9 @@ class SaveAPIView(APIView):
         # sensor, y, almaceno la fecha y hora actual.
         values_list = request.data.get('sensor_data')
         today = datetime.now()
-        date = today.strftime('%d-%m-%Y | %H:%M:%S')
+        date = today.strftime('%d-%m-%Y')
+        time = today.strftime('%H:%M:%S')
+        print(time)
 
         try:
             # En caso de que se envíe un dato vacío.
@@ -67,14 +69,18 @@ class SaveAPIView(APIView):
             
             # En caso de que se envíe un dato de un único valor.
             elif len(values_list) == 1:
-                datum = Measurement.objects.create(value=values_list[0], date=date)
+                datum = Measurement.objects.create(value=values_list[0], 
+                                                    date=date,
+                                                    time=time)
                 datum.save()
                 response_message = {'success': "true"}
             else:   
                 # Itero la lista y voy almacenado los valores en el
                 # modelo de la base de datos.
                 for value in values_list:
-                    datum = Measurement.objects.create(value=value, date=date)
+                    datum = Measurement.objects.create(value=value, 
+                                                        date=date,
+                                                        time=time)
                     datum.save()   
                 response_message = {'success': "true"}
         except:
@@ -90,6 +96,10 @@ class GetMaxAPIView(APIView):
     \nen una Clase que permite recibir peticiones mediante el
     \natributo request del tipo "GET".
     \nRetorna el valor "MÁXIMO" de los datos.
+    \n`Ejemplo de Schema de Retorno Exitoso:`
+    \n`{`
+    \n` "max": 29`
+    \n`}`
     '''
 
     # NOTE: Le indico que esta view no va a necesitar
@@ -105,6 +115,10 @@ class GetMaxAPIView(APIView):
         \nSe sobreescribe la función asociada el método GET para
         \nretornar el valor "Máximo" de los datos presentes
         \nen la Base de Datos.
+        \n`Ejemplo de Schema de Retorno Exitoso:`
+        \n`{`
+        \n` "max": 29`
+        \n`}`
         '''
         max_value = dict()
 
@@ -141,6 +155,10 @@ class GetMinAPIView(APIView):
     \nen una Clase que permite recibir peticiones mediante el
     \natributo request del tipo "GET".
     \nRetorna el valor "Mínimo" de los datos.
+    \n`Ejemplo de Schema de Retorno Exitoso:`
+    \n`{`
+    \n` "min": -14.98`
+    \n`}`
     '''
 
     # NOTE: Le indico que esta view no va a necesitar
@@ -156,6 +174,10 @@ class GetMinAPIView(APIView):
         \nSe sobreescribe la función asociada el método GET para
         \nretornar el valor "MINIMO" de los datos presentes
         \nen la Base de Datos.
+        \n`Ejemplo de Schema de Retorno Exitoso:`
+        \n`{`
+        \n` "min": -14.98`
+        \n`}`
         '''
         min_value = dict()
 
@@ -192,6 +214,10 @@ class GetAvgAPIView(APIView):
     \nen una Clase que permite recibir peticiones mediante el
     \natributo request del tipo "GET".
     \nRetorna el valor "Promedio" de los datos.
+    \n`Ejemplo de Schema de Retorno Exitoso:`
+    \n`{`
+    \n` "avg": 1.28`
+    \n`}`
     '''
 
     # NOTE: Le indico que esta view no va a necesitar
@@ -207,6 +233,10 @@ class GetAvgAPIView(APIView):
         \nSe sobreescribe la función asociada el método GET para
         \nretornar el valor "PROMEDIO" de los datos presentes
         \nen la Base de Datos.
+        \n`Ejemplo de Schema de Retorno Exitoso:`
+        \n`{`
+        \n` "avg": 1.28`
+        \n`}`
         '''
         min_value = dict()
 
