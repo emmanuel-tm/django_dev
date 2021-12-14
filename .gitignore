@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# ddbb excludes
+powermeter/database/
+
+# Images excludes
+images/
