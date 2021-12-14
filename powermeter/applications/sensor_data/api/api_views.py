@@ -1,6 +1,4 @@
 # Import the models and serializers:
-from django.contrib.auth import authenticate
-from rest_framework import permissions
 from applications.sensor_data.models import Measurement
 from applications.sensor_data.api.serializers import *
 
