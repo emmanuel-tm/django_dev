@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # ddbb excludes
-powermeter/database/django_dev.db
+#powermeter/database/django_dev.db
 
 # Images excludes
 images/
