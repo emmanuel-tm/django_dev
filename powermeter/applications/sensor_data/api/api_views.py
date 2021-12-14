@@ -3,7 +3,6 @@ from applications.sensor_data.models import Measurement
 from applications.sensor_data.api.serializers import *
 
 # Import the permissions, parsers and response:
-from rest_framework.permissions import AllowAny
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
 
