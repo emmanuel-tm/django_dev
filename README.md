@@ -21,6 +21,12 @@ Una vez dentro ejecutamos el comando:
 
 **$** `cd /opt/back_end/powermeter` 
 
+### **IMPORTANTE:**
+En caso de no existir la carpeta **database** a la altura del *manage.py* se debe
+crear dicha carpeta ejecutando el siguiente comando: **$** `mkdir database`. De esta manera
+se crea la carpeta que contendra la db del proyecto.
+En caso de existir se debe omitir lo detallado arriba.
+
 ### 3. Iniciar el servidor
 (Siempre dentro de nuestro contenedor de software - Comando N°2)  
 Tenemos que ir a la carpeta donde se encuentra el archivo *manage.py*  
