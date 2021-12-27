@@ -2,7 +2,9 @@
 
 ## Pasos para poder utilizar y ejecutar el proyecto:
 
-- En la Consola o Termina ejecutar el siguiente comando: *git clone https://github.com/emmanuel-tm/django_dev.git*.
+- En la Consola o Terminal ejecutar el siguiente comando: 
+
+**$** `git clone https://github.com/emmanuel-tm/django_dev.git`
 
 - Una vez clonado el repositorio se deben seguir los siguientes pasos:
 
