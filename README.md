@@ -22,6 +22,12 @@ Una vez dentro ejecutamos el comando:
 **$** `cd /opt/back_end/powermeter` 
 
 ### **IMPORTANTE:**
+
+**NOTA:** Se actualizó el archivo docker-compose.yml, de esta manera, ya no se
+requiere crear la carpeta */database* (ahora se crea automáticamente al levantar el
+contenedor). De todas formas, se deja a continuación el comando para crear la carpeta 
+en caso de que sea borrada por algún motivo o no se haya creado.
+
 En caso de no existir la carpeta **database** a la altura del *manage.py* se debe
 crear dicha carpeta ejecutando el siguiente comando:
 
@@ -32,6 +38,12 @@ De esta manera se crea la carpeta que contendra la db del proyecto.
 En caso de existir el directorio **database**  se debe omitir lo detallado arriba.
 
 ### 3. Iniciar el servidor
+
+**NOTA:** Se actualizó el archivo docker-compose.yml, de esta manera, ya no se
+requiere iniciar el servidor (se inicia automáticamente al levantar el contenedor).
+De todas formas, en caso de que no suceda así o haya algún error que impida que iniciar
+el servidor, se deja a continuación el comado para hacerlo:
+
 (Siempre dentro de nuestro contenedor de software - Comando N°2)  
 Tenemos que ir a la carpeta donde se encuentra el archivo *manage.py*  
 
