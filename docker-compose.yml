@@ -24,3 +24,5 @@ services:
     # Control de consola:
     stdin_open: true
     tty: true
+    # Se ejecuta comando utilizando bash:
+    command: bash -c "mkdir -p powermeter/database && python powermeter/manage.py runserver 0.0.0.0:8000"
