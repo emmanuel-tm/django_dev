@@ -10,6 +10,7 @@
 
 ### 1. Correr el proyecto
 Siempre en el mismo directorio del archivo *docker-compose.yml*
+
 **$** `docker-compose up`
 
 ### 2. Correr la línea de comandos dentro del contenedor
